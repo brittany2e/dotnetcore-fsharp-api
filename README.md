@@ -3,8 +3,10 @@ Playground for learning F# api best practices. My team is learning F# and the fu
 
 ## Questions
 
-Looking for feedback on file structure and module/type organization. I would like to do things the functional way, but it's hard to get out of the OO mindset. Once a good pattern is set up, it will make adding new endpoints easier. How would you structure an api that uses a database for some things and external api calls for other things, and where does the business logic layer fit in? I'll try to come up with more complicated endpoint examples. Also would like to find good patterns to replace how we are used to doing dependency injection in C#. One possibility that looks interesting is: https://dev.to/jhewlett/dependency-injection-in-f-web-apis-4h2o
-
+* Looking for feedback on file structure and module/type organization. I would like to do things the functional way, but it's hard to get out of the OO mindset. Once a good pattern is set up, it will make adding new endpoints easier. How would you structure an api that uses a database for some things and external api calls for other things, and where does the business logic layer fit in? I'll try to come up with more complicated endpoint examples. 
+* Also would like to find good patterns to replace how we are used to doing dependency injection in C#. One possibility that looks interesting is: https://dev.to/jhewlett/dependency-injection-in-f-web-apis-4h2o
+* Error handling and exceptions? What is a good way to incorporate business validation for incoming data? What about asking to GET an Id that doesn't exist?
+* Mock the database for testing? Good testing practices in general?
 
 ## // TODO
 
