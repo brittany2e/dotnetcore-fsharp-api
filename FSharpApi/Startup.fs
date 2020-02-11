@@ -12,6 +12,8 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
 open Microsoft.OpenApi.Models
+open Clients
+open FsharpApi.Modules.WeatherForecast.Mappers
 
 type Startup private () =
     new (configuration: IConfiguration) as this =
