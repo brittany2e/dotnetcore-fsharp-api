@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Modules\LocalNews\LocalNewsController.fs" />
+    <Compile Include="Modules\LocalNews\LocalNewsMapper.fs" />
     <Compile Include="Modules\WeatherForecast\WeatherForecastMapper.fs" />
     <Compile Include="Repositories.fs" />
     <Compile Include="Domain.fs" />
@@ -15,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql.FSharp" Version="1.19.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc5" />
   </ItemGroup>
 

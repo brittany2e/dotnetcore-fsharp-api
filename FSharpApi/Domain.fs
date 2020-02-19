@@ -2,5 +2,12 @@ namespace FsharpApi.Domain
 
 open System
 
-// This is where we put the types that map to the database columns.
-// I don't have any db stuff in this version
+type News = 
+    {   
+        id : Guid
+        headline : string
+        body : string
+        date : DateTime
+        author : string
+        category : int64
+    }
