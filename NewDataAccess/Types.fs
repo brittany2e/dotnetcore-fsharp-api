@@ -1,8 +1,10 @@
-namespace FsharpApi.Domain
+﻿namespace FSharpApi.News.DTO
 
 open System
 
-type News = 
+module Types =
+
+  type News = 
     {   
         id : Guid
         headline : string

@@ -1,4 +1,4 @@
-﻿namespace Dtos
+﻿namespace FSharpApi.Payloads
 
 open System
 open System.Collections
