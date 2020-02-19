@@ -14,14 +14,18 @@ open Microsoft.Extensions.Hosting
 open Microsoft.OpenApi.Models
 open Clients
 open FsharpApi.Modules.WeatherForecast.Mappers
+open FSharpApi
+
 
 type Startup private () =
+
     new (configuration: IConfiguration) as this =
         Startup() then
         this.Configuration <- configuration
+        this.NewsConnectionString <- "<Not write :/>"
 
     // This method gets called by the runtime. Use this method to add services to the container.
-    member _.ConfigureServices(services: IServiceCollection) =
+    member this.ConfigureServices(services: IServiceCollection) =
         // Add framework services.
         services.AddControllers() |> ignore
 
@@ -29,8 +33,11 @@ type Startup private () =
             c.SwaggerDoc("v1", OpenApiInfo())
          ) |> ignore
 
+        services.AddScoped<News.DataAccess.IDataAccess>(fun _ -> News.DataAccess.getInstance (this.NewsConnectionString))
+
+
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    member _.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
+    member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =
         if (env.IsDevelopment()) then
             app.UseDeveloperExceptionPage() |> ignore
 
@@ -50,3 +57,4 @@ type Startup private () =
             ) |> ignore
 
     member val Configuration : IConfiguration = null with get, set
+    member val NewsConnectionString : string = null with get, set

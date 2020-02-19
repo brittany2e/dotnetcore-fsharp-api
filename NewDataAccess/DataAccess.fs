@@ -7,15 +7,32 @@ open FSharpApi.News.DTO.Types
 
 module DataAccess = 
 
-    type NewsRepository(connectionString:string) =
-        
-        let getLocalNews (date:DateTime) = 
-            connectionString
-            |> Sql.connect
-            |> Sql.query "select * from local_news where recorded_date = @date"
-            |> Sql.parameters ["date", Sql.Value date]
-            |> Sql.executeTable
-            |> Sql.parseEachRow<News>
+    type IDataAccess =
+      abstract GetLocalNews : calDate:DateTime -> News list
 
-        member _.GetLocalNews date =
-            getLocalNews date
+
+    let private _getLocalNews (connectionString:string) (date:DateTime) =
+      connectionString
+      |> Sql.connect
+      |> Sql.query "select * from local_news where recorded_date = @date"
+      |> Sql.parameters ["date", Sql.Value date]
+      |> Sql.executeTable
+      |> Sql.parseEachRow<News>
+
+    let getInstance (connectionString:string) =
+      { new IDataAccess with
+          member _.GetLocalNews calDate = _getLocalNews connectionString calDate
+      }
+
+    //type NewsRepository(connectionString:string) =
+        
+    //    let getLocalNews (date:DateTime) = 
+    //        connectionString
+    //        |> Sql.connect
+    //        |> Sql.query "select * from local_news where recorded_date = @date"
+    //        |> Sql.parameters ["date", Sql.Value date]
+    //        |> Sql.executeTable
+    //        |> Sql.parseEachRow<News>
+
+    //    member _.GetLocalNews date =
+    //        getLocalNews date
