@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="WeatherForecastTypes.fs" />
+    <Compile Include="WeatherForecastDataAccess.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.FSharp" Version="1.19.0" />
+  </ItemGroup>
+
+</Project>

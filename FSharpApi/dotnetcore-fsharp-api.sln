@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FsharpApi", "FsharpApi.fsproj", "{DF6A7D55-19CC-458C-9E3F-2429B4B81BE1}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Dtos", "..\Dtos\Dtos.fsproj", "{5A9F4CDA-E178-43C0-BE87-2D047CC95310}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Resources", "..\Dtos\Resources.fsproj", "{5A9F4CDA-E178-43C0-BE87-2D047CC95310}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clients", "..\Clients\Clients.csproj", "{62CE45ED-F9DA-403A-8F7D-B12E68313B0C}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "WeatherForecastDataAccess", "..\DataAccess\WeatherForecastDataAccess.fsproj", "{DF0013B5-E53E-421C-8F1E-8B83D3DFDED2}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "NewsDataAccess", "..\NewDataAccess\NewsDataAccess.fsproj", "{1FD81DA4-8946-491B-90AF-17F15CB1904B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,14 @@ Global
 		{5A9F4CDA-E178-43C0-BE87-2D047CC95310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A9F4CDA-E178-43C0-BE87-2D047CC95310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A9F4CDA-E178-43C0-BE87-2D047CC95310}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62CE45ED-F9DA-403A-8F7D-B12E68313B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62CE45ED-F9DA-403A-8F7D-B12E68313B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62CE45ED-F9DA-403A-8F7D-B12E68313B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62CE45ED-F9DA-403A-8F7D-B12E68313B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0013B5-E53E-421C-8F1E-8B83D3DFDED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0013B5-E53E-421C-8F1E-8B83D3DFDED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0013B5-E53E-421C-8F1E-8B83D3DFDED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0013B5-E53E-421C-8F1E-8B83D3DFDED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD81DA4-8946-491B-90AF-17F15CB1904B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD81DA4-8946-491B-90AF-17F15CB1904B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD81DA4-8946-491B-90AF-17F15CB1904B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD81DA4-8946-491B-90AF-17F15CB1904B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,18 +1,18 @@
-﻿namespace FsharpApi.Modules.WeatherForecast.Mappers
+﻿namespace FSharpApi.WeatherForecast
 
 open System
 open System.Linq
-open Clients
-open Dtos
+open FSharpApi.WeatherForecast.Resources
+open FSharpApi.WeatherForecast.Types
 
-module WeatherForecastMapper =
+module Mapper =
 
-    let MapWeather (weather:WeatherDto) =
+    let MapWeather (weather:WeatherPrediction) =
         let day = weather.Date.DayOfWeek
         String.Format("The weather forecast for {0} is {1} at {2} degrees F.", day, weather.Summary, weather.TemperatureF)
     
-    let Map (weatherForecast:WeatherResponse) =
-        let forecast = weatherForecast.Forecast.Select(MapWeather)
+    let MapList weatherForecastList =
+        let forecast = List.map MapWeather weatherForecastList
         {
             Forecast = forecast
         }
