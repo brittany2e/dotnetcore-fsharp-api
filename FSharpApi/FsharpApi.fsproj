@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\WeatherForecastDataAccess.fsproj" />
-    <ProjectReference Include="..\Dtos\Resources.fsproj" />
-    <ProjectReference Include="..\NewDataAccess\NewsDataAccess.fsproj" />
+    <ProjectReference Include="..\NewsDataAccess\NewsDataAccess.fsproj" />
+    <ProjectReference Include="..\Resources\Resources.fsproj" />
+    <ProjectReference Include="..\WeatherForecastDataAccess\WeatherForecastDataAccess.fsproj" />
   </ItemGroup>
 
 </Project>
