@@ -1,4 +1,4 @@
-﻿namespace FSharpApi.News.DTO
+﻿namespace FSharpApi.News
 
 open System
 

@@ -6,10 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Modules\LocalNews\LocalNewsController.fs" />
-    <Compile Include="Modules\LocalNews\LocalNewsMapper.fs" />
+    <Compile Include="Modules\News\NewsMapper.fs" />
+    <Compile Include="Modules\News\NewsController.fs" />
     <Compile Include="Modules\WeatherForecast\WeatherForecastMapper.fs" />
-    <Compile Include="Repositories.fs" />
     <Compile Include="Modules\WeatherForecast\WeatherForecastController.fs" />
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
@@ -20,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Clients\Clients.csproj" />
-    <ProjectReference Include="..\Dtos\Payload.fsproj" />
+    <ProjectReference Include="..\DataAccess\WeatherForecastDataAccess.fsproj" />
+    <ProjectReference Include="..\Dtos\Resources.fsproj" />
     <ProjectReference Include="..\NewDataAccess\NewsDataAccess.fsproj" />
   </ItemGroup>
 

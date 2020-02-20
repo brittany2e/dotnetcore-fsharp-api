@@ -1,4 +1,4 @@
-namespace FsharpApi
+namespace FSharpApi
 
 open System
 open System.Collections.Generic

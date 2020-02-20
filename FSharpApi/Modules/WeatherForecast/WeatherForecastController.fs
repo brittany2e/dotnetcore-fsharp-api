@@ -1,4 +1,4 @@
-﻿namespace FsharpApi.Modules
+﻿namespace FSharpApi.WeatherForecast
 
 open System
 open System.Collections.Generic
@@ -6,22 +6,18 @@ open System.Linq
 open System.Threading.Tasks
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
-open Clients
-open FsharpApi.Modules.WeatherForecast.Mappers
+open FSharpApi.WeatherForecast.Resources
 
 [<ApiController>]
 [<Route("[controller]")>]
 type WeatherForecastController (logger : ILogger<WeatherForecastController>
+    , repository : DataAccess.IDataAccess
     ) =
     inherit ControllerBase()
 
     [<HttpGet>]
-    member __.Get() =
-        // TODO Figure out the DI so this client can go in the constructor, 
-        // but maybe that's not important since I am going to change this 
-        // endpoint to use the repository stuff anyway.
-        let client = new WeatherForecastApiClient()
-
-        let forecast = client.GetWeatherForecast()
-        WeatherForecastMapper.Map(forecast)
+    member __.GetWeatherForecast( startDate, endDate )= 
+        let forecast = repository.GetWeatherForecast startDate endDate
+        Mapper.MapList forecast
+        
         

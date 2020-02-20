@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="WeatherForecast\Payloads.fs" />
+    <Compile Include="NewsResources.fs" />
+    <Compile Include="WeatherForecastResources.fs" />
   </ItemGroup>
 
 </Project>
