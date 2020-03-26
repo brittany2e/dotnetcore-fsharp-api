@@ -25,7 +25,7 @@ module WeatherForecastControllerTests =
         let endDate = startDate.Add(timeSpan)
         let controller = new WeatherForecastController(mockLogger, mockDataAcess)
 
-        let result = controller.GetWeatherForecast(startDate, endDate)
+        let result = controller.GetWeatherForecast(startDate.ToString(), endDate.ToString())
         
         Assert.True(result.Forecast.IsEmpty)
 
