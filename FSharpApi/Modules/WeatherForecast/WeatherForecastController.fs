@@ -17,7 +17,7 @@ type WeatherForecastController (logger : ILogger<WeatherForecastController>
 
     [<HttpGet>]
     member __.GetWeatherForecast( startDate:string, endDate:string ) = 
-        // Actual dates
+        // Ensure inputs are actual dates
         let couldParseStart, parsedStartDate = System.DateTimeOffset.TryParse(startDate)
         let couldParseEnd, parsedEndDate = System.DateTimeOffset.TryParse(endDate)
         match couldParseStart, couldParseEnd with
@@ -37,11 +37,9 @@ type WeatherForecastController (logger : ILogger<WeatherForecastController>
         | _                     -> ()
 
         // Do the query (return result case)
-        let forecast = repository.GetWeatherForecast parsedStartDate parsedEndDate
+        let forecastResult = repository.GetWeatherForecast parsedStartDate parsedEndDate
         
         // Data exists for the date period in that location
-
-
-        Mapper.MapList forecast
-        
-        
+        match forecastResult with 
+        | Ok forecast -> Mapper.MapList forecast    // |> this.Ok :> IActionResult
+        | Error msg -> failwith msg                 // this.BadRequest(msg) :> IActionResult
